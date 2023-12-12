@@ -1,0 +1,46 @@
+# File Locations
+
+Kafka: /usr/local/kafka/kafka_2.13-3.6.0
+Spark: /usr/local/spark/spark-3.5.0-bin-hadoop3
+
+# Configs for Current Environment
+
+Kafka Broker Address: 9092
+Zookeeper Address: 2181
+Current Kafka Topics: movie-ratings
+Spark Master Address: 7077 
+
+# Dataset Scriptchema
+
+movies_metadata.csv:
+ |-- adult: string (nullable = true)
+ |-- belongs_to_collection: string (nullable = true)
+ |-- budget: string (nullable = true)
+ |-- genres: string (nullable = true)
+ |-- homepage: string (nullable = true)
+ |-- id: string (nullable = true)
+ |-- imdb_id: string (nullable = true)
+ |-- original_language: string (nullable = true)
+ |-- original_title: string (nullable = true)
+ |-- overview: string (nullable = true)
+ |-- popularity: string (nullable = true)
+ |-- poster_path: string (nullable = true)
+ |-- production_companies: string (nullable = true)
+ |-- production_countries: string (nullable = true)
+ |-- release_date: string (nullable = true)
+ |-- revenue: string (nullable = true)
+ |-- runtime: string (nullable = true)
+ |-- spoken_languages: string (nullable = true)
+ |-- status: string (nullable = true)
+ |-- tagline: string (nullable = true)
+ |-- title: string (nullable = true)
+ |-- video: string (nullable = true)
+ |-- vote_average: string (nullable = true)
+ |-- vote_count: string (nullable = true)
+
+ ratings.csv:
+ |-- userId: integer (nullable = true)
+ |-- movieId: integer (nullable = true)
+ |-- rating: double (nullable = true)
+ |-- timestamp: integer (nullable = true)
+

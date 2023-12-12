@@ -1,0 +1,50 @@
+# Movie Ratings Project - Setup Instructions
+
+## 1. Start Zookeeper:
+
+Navigate to the Kafka installation directory:
+cd /usr/local/kafka/kafka_2.13-3.6.0
+
+Start Zookeeper:
+./bin/zookeeper-server-start.sh config/zookeeper.properties
+
+## 2. Start Kafka Broker:
+
+In a new terminal, navigate to the Kafka installation directory:
+cd /usr/local/kafka/kafka_2.13-3.6.0
+
+Start Kafka Broker:
+./bin/kafka-server-start.sh config/server.properties
+
+## 4. Start Spark:
+
+Navigate to the Spark installation directory:
+cd /usr/local/spark/spark-3.5.0-bin-hadoop3
+
+Start Spark Master:
+./sbin/start-master.sh
+
+Start Spark Worker:
+./sbin/start-worker.sh spark://your_spark_master:7077
+
+Check Spark Master is running:
+visit: http://localhost:8080/
+
+## 5. Run Kafka Producer Script:
+
+Activate your virtual environment (if not already activated):
+source /home/hadoop/movie_ratings_project/venv/bin/activate
+
+Run the Kafka producer script:
+python /home/hadoop/movie_ratings_project/scripts/ratings_producer.py
+
+## 6. Run Analysis Consumer Script:
+
+Navigate to script directory:
+cd /home/hadoop/movie_ratings_project/scripts/analysis
+
+Submit analysis script:
+spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.2 /path/to/analysis/script.py
+
+
+
